@@ -52,6 +52,8 @@ const typeDefs = `
 
   type Project {
     title: String
+    active: Boolean
+    members: [User]
   }
 
   # The "Query" type is special: it lists all of the available queries that
