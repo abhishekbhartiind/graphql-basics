@@ -1,17 +1,16 @@
 import { ApolloServer } from "@apollo/server"
 import { startStandaloneServer } from "@apollo/server/standalone"
-import { users } from "../database/users.js"
-import { books } from "../database/books.js"
 import { typeDefs } from "./graphql/schema.js"
+import { resolvers } from "./graphql/resolver.js"
 
 // Resolvers define how to fetch the types defined in your schema.
 // This resolver retrieves books from the "books" array above.
-const resolvers = {
-  Query: {
-    books: () => books(),
-    users: () => users(),
-  },
-}
+// const resolvers = {
+//   Query: {
+//     books: () => books(),
+//     users: () => users(),
+//   },
+// }
 
 // The ApolloServer constructor requires two parameters: your schema
 // definition and your set of resolvers.
