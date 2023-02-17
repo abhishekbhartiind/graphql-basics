@@ -1,15 +1,4 @@
-const books = [
-  {
-    title: "The Awakening",
-    author: "Kate Chopin",
-  },
-  {
-    title: "City of Glass",
-    author: "Paul Auster",
-  },
-]
-
-const users = [
+export const users = () => [
   {
     name: "Abhishek",
     email: "zealthyabhi@gmail.com",
@@ -29,8 +18,3 @@ const users = [
     ],
   },
 ]
-
-module.exports = {
-  users,
-  books,
-}
