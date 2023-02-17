@@ -12,20 +12,54 @@ const books = [
   },
 ]
 
+const users = [
+  {
+    name: "Abhishek",
+    email: "zealthyabhi@gmail.com",
+    projects: [
+      {
+        title: "GraphQL Ecommerce",
+      },
+    ],
+  },
+  {
+    name: "Shubham",
+    email: "shubham@gmail.com",
+    projects: [
+      {
+        title: "GraphQL Ecommerce",
+      },
+    ],
+  },
+]
 // A schema is a collection of type definitions (hence "typeDefs")
 // that together define the "shape" of queries that are executed against
 // your data.
-const typeDefs = `#graphql
+const typeDefs = `
+  # graphql
   # This "Book" type defines the queryable fields for every book in our data source.
+
   type Book {
     title: String
     author: String
   }
 
+  type User {
+    name: String
+    email: String
+    projects: [Project]
+  }
+
+  type Project {
+    title: String
+  }
+
   # The "Query" type is special: it lists all of the available queries that
   # clients can execute, along with the return type for each.
+
   type Query {
-    books: [Book]
+    books: [Book],
+    users: [User]
   }
 `
 
@@ -34,6 +68,7 @@ const typeDefs = `#graphql
 const resolvers = {
   Query: {
     books: () => books,
+    users: () => users,
   },
 }
 
