@@ -1,37 +1,7 @@
 import { ApolloServer } from "@apollo/server"
 import { startStandaloneServer } from "@apollo/server/standalone"
+import { books, users } from "./database/mock"
 
-const books = [
-  {
-    title: "The Awakening",
-    author: "Kate Chopin",
-  },
-  {
-    title: "City of Glass",
-    author: "Paul Auster",
-  },
-]
-
-const users = [
-  {
-    name: "Abhishek",
-    email: "zealthyabhi@gmail.com",
-    projects: [
-      {
-        title: "GraphQL Ecommerce",
-      },
-    ],
-  },
-  {
-    name: "Shubham",
-    email: "shubham@gmail.com",
-    projects: [
-      {
-        title: "GraphQL Ecommerce",
-      },
-    ],
-  },
-]
 // A schema is a collection of type definitions (hence "typeDefs")
 // that together define the "shape" of queries that are executed against
 // your data.
