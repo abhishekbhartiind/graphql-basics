@@ -28,6 +28,41 @@ const { url } = await startStandaloneServer(server, {
 console.log(`🚀  Server ready at: ${url}`);
 ```
 
+```bash
+query {
+  books {
+    title
+    author
+  }
+}
+
+```
+
+```bash
+query {
+  users {
+    name
+    email
+    projects {
+      title
+    }
+  }
+}
+
+```
+
+```bash
+
+# Here exclaimation at end of active Project type means
+# field value must be present, otherwise throws an error
+
+type Project {
+  title: String
+  active: Boolean!
+  members: [User]
+}
+```
+
 Documentation
 
 ```bash
