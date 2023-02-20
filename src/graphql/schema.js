@@ -5,11 +5,13 @@ import gql from "graphql-tag"
 // your data.
 export const typeDefs = () => gql`
   type Book {
+    id: Int!
     title: String
     author: String
   }
 
   type User {
+    id: Int!
     name: String
     email: String
     projects: [Project]
